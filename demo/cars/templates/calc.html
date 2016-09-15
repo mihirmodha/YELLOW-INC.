@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <p>Click the button to calculate x.</p>
+    <button onclick="myFunction()">Try it</button>
+    <br/>
+    <br/>Enter first number:
+    <input type="text" id="txt1" name="text1">Enter second number:
+    <input type="text" id="txt2" name="text2">Enter third number:
+    <input type="text" id="txt3" name="text3">Enter fourth number:
+    <input type="text" id="txt4" name="text4">
+    <p id="demo"></p>
+    <script>
+      function myFunction() {
+       var w = parseInt(document.getElementById("txt1").value);
+       var x = parseInt(document.getElementById("txt2").value);
+       var y = parseInt(document.getElementById("txt3").value);
+       var month = parseInt(document.getElementById("txt4").value);
+       var payamnt = w - x;
+       var rate = y/(12*100);
+       var t = 1 + rate;  
+       var gozy = Math.pow(t, month);
+       var emi = (payamnt*rate*gozy)/(gozy-1);
+       document.getElementById("demo").innerHTML = emi;
+      }
+    </script>
+  </body>
+</html>

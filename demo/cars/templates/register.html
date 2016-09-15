@@ -1,0 +1,247 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "cars/img/car.ico" %}" />
+    <title>Register</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{% static "cars/css/bootstrap.min.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "cars/css/signin.css" %}" type="text/css">
+
+
+    <!-- Plugin CSS -->
+  
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="{% static "cars/css/styles.css" %}" type="text/css">
+   
+
+</head>
+<body>
+
+    {% include "navbar.html" %}
+
+    <div class="container jumbotron">
+        <h3 class="text-center"><span class="glyphicon glyphicon-check"></span><b> SIGN UP</b></h3>
+        <hr>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        <div class="row"> 
+                 <div class="col-md-12">
+
+                    <form id="user_form" method="post" action="/register/" enctype="multipart/form-data" >
+                    {% csrf_token %}
+
+
+ 
+                    <div class="row">
+                        
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                             <label for="id_first_name">First Name :</label>
+                               <input id="id_first_name" maxlength="30" name="first_name" type="text" class="form-control" placeholder="First Name"/>
+                            </div></div>
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                               <label for="id_first_name">Last Name :</label>
+                               <input id="id_last_name" maxlength="30" name="last_name" type="text" class="form-control" placeholder="Last Name"/>
+                               </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                             <label for="id_email">Email address:</label>
+                             <input id="id_email" maxlength="254" name="email" type="email" class="form-control" placeholder="E-mail address"/>
+                        </div> 
+                        </div> 
+ 
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                             <label for="id_username">Phone: <span data-toggle="popover" data-placement="right" data-content="You'll be using your phone number to sign in."><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span></label>
+                             <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">+91</span>
+                            <input id="id_username" maxlength="30" name="username" type="text" class="form-control" placeholder="Phone" aria-describedby="basic-addon1" /><br />
+                        </div> 
+                        </div> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                             <label for="id_password">Password :</label>
+                            <input id="id_password" name="password" type="password" class="form-control"placeholder="Password"/>
+                        </div>
+                        </div>
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                             <label for="id_cpassword">Confirm Password :</label>
+                            <input id="id_cpassword" name="cpassword" type="password" class="form-control"placeholder="Password"/>
+                        </div>
+                        </div>
+                    </div>   
+                      <div class="row">
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                             <label for="id_dob">Date of Birth :</label>
+                             <input id="datepicker" maxlength="254" name="dob" type="text" class="form-control" placeholder="Date of Birth"/>
+                        </div> 
+                        </div> 
+ 
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                             <label for="id_state">Gender :</label>
+                                <select id="id_gender" name="gender" class="form-control dropdown">
+                                    <option value="" selected="selected" disabled="true">---------</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                        </div>
+                        </div>
+                    </div>
+
+                 
+                      <div class="row">
+                          <div class="col-xs-3"></div>
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                              <label for="id_district" class="center">District :</label>
+                                <select id="id_district" name="district" class="form-control">
+                                    <option value="" selected="selected" disabled="true">---------</option>
+                                    <option value="Kochi">Thriruvananthapuram</option>
+                                    <option value="Kochi">Kollam</option>
+                                    <option value="Kochi">Pathanamthitta</option>
+                                    <option value="Kochi">Alappuzha</option>
+                                    <option value="Kochi">Kottayam</option>
+                                    <option value="Kochi">Idukki</option>
+                                    <option value="Kochi">Ernakulam</option>
+                                    <option value="Kochi">Thissur</option>
+                                    <option value="Kochi">Palakkad</option>
+                                    <option value="Kochi">Malappuram</option>
+                                    <option value="Kochi">Kozhikode</option>
+                                    <option value="Kochi">Wayanad</option>
+                                    <option value="Kochi">Kannur</option>
+                                    <option value="Kochi">Kasargod</option>
+                               </select>
+                        </div>
+                        </div> 
+                        <div class="col-xs-2"></div>
+ 
+                       
+                    </div>
+                   <div class="row">
+                       <div class="col-xs-3"></div>
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                          <input type="submit" name="submit" value="Register" class="btn btn-lg btn-primary btn-block"/>
+                        </div>
+                        </div>
+                    </div>
+                  
+
+
+                        </form>
+                 </div>
+            </div>  <div class="col-md-4"></div>
+        </div></div>
+    <div class="col-md-4"></div>
+    <script src="{% static 'cars/js/jquery.js' %}"></script>
+     <!-- Bootstrap Core JavaScript -->
+   
+
+   
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'cars/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'cars/js/jquery.fittext.js' %}"></script>
+    <script src="{% static 'cars/js/wow.min.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+   
+<!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+   
+    
+   
+
+      
+    
+     <script src="{% static 'cars/js/bootstrap.min.js' %}"></script>  
+     <script src="{% static 'cars/js/creative.js' %}"></script>    
+    
+  <script>
+  $( function() { 
+
+    $( "#datepicker" ).datepicker({ 
+      showOtherMonths: true,
+      selectOtherMonths: true,
+        maxDate:'-18Y',
+        minDate:'-100Y',
+    });     
+  $('[data-toggle="popover"]').popover();
+  
+  });
+  
+ $("#user_form").validate({
+   rules: {
+        username: {
+            required:true, 
+            digits: true, 
+            minlength: 10, 
+            maxlength: 10
+        },
+	first_name: {
+            required: true, alpahbet : true
+        },
+	last_name: {
+            required: true, alpahbet : true
+        },
+	password: {
+            required: true, minlength: 8
+        },
+	cpassword: {
+            required: true, minlength: 8, equalTo: "#id_password"
+        },
+	dob: {
+            required: true
+        },
+	gender: {
+            required: true
+        },
+	email: {
+            required: true
+        },
+	state: {
+            required: true
+        },
+	district: {
+            required: true
+        },
+	city: {
+            required: true
+        }
+
+    }, submitHandler: function(form) {
+    $(form).submit();
+  }
+ }); 
+
+ 
+    </script>  
+      
+      
+       <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="{% static 'cars/js/jquery.validate.min.js' %}"></script>
+ 
+
+</body>
+         {% include "footer.html" %}
+    {% include "modal.html" %}
+</html>
